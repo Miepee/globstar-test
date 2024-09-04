@@ -25,6 +25,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
+      - name: tree
+        run: tree ./packages
+
       # Runs a single command using the runners shell
       - name: Upload binaries to GitHub Release
         uses: svenstaro/upload-release-action@2.9.0
