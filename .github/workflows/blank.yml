@@ -34,6 +34,5 @@ jobs:
           file_glob: true
           tag: ${{ github.ref }}
           overwrite: true
-          prerelease: false
           release_name: ${{ github.sha }}
           body: ${{ github.sha }}
