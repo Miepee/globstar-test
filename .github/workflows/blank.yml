@@ -37,5 +37,5 @@ jobs:
           file_glob: true
           tag: ${{ github.sha }}
           overwrite: true
-          release_name: ${{ github.sha }}
+          release_name: ${GITHUB_SHA::7}
           body: ${{ github.sha }}
