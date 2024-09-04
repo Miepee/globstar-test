@@ -37,7 +37,7 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: packages/**
           file_glob: true
-          tag: ${{ github.sha }}
+          tag: $SHA8
           overwrite: true
           release_name: $SHA8
           body: ${{ github.sha }}
