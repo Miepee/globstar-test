@@ -30,6 +30,10 @@ jobs:
       - name: tree
         run: tree ./packages
 
+      - name: Get short SHA
+        id: slug
+        run: echo "sha8=${GITHUB_SHA:8}" >> $GITHUB_OUTPUT
+        
       # Runs a single command using the runners shell
       - name: Upload binaries to GitHub Release
         uses: svenstaro/upload-release-action@2.9.0
@@ -37,7 +41,7 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: packages/**
           file_glob: true
-          tag: $SHA8
+          tag: ${{ steps.slug.outputs.sha8 }}
           overwrite: true
-          release_name: $SHA8
+          release_name: ${{ steps.slug.outputs.sha8 }}
           body: ${{ github.sha }}
